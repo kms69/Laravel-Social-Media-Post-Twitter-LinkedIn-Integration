@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  laravel-app:
+    build:
+      context: .
+    container_name: sociliate_app
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - laravel-network
+
+networks:
+  laravel-network:
+    driver: bridge
